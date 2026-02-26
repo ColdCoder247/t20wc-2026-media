@@ -1,0 +1,36 @@
+
+name: T20 WC Media System
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - run: pip install -r requirements.txt
+    - run: playwright install chromium
+
+    - name: Run Generators
+      run: |
+        python generate_schedule.py
+        python generate_preview.py
+      env:
+        CRICKET_API_KEY: ${{ secrets.CRICKET_API_KEY }}
+
+    - name: Commit Changes
+      run: |
+        git config user.name github-actions
+        git config user.email actions@github.com
+        git add output/
+        git commit -m "Auto Updated WC Media" || echo "No changes"
+        git push
