@@ -1,0 +1,28 @@
+
+body {
+  background: #0d1117;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+}
+
+h1 { color: orange; }
+
+.card {
+  background: #161b22;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.highlight { color: yellow; font-weight: bold; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #30363d;
+  padding: 10px;
+}

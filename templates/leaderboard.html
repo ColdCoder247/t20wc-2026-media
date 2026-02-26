@@ -1,0 +1,9 @@
+
+<link rel="stylesheet" href="base.css">
+<h1>Top Performers</h1>
+{% for p in players %}
+<div class="card">
+  <strong>{{ p.name }}</strong><br>
+  Runs: {{ p.runs }} | Wickets: {{ p.wickets }}
+</div>
+{% endfor %}

@@ -1,0 +1,18 @@
+
+<link rel="stylesheet" href="base.css">
+<h1>Points Table</h1>
+<table class="table">
+<tr>
+<th>Team</th><th>P</th><th>W</th><th>L</th><th>NRR</th><th>Pts</th>
+</tr>
+{% for t in teams %}
+<tr>
+<td>{{ t.team }}</td>
+<td>{{ t.played }}</td>
+<td>{{ t.won }}</td>
+<td>{{ t.lost }}</td>
+<td>{{ t.nrr }}</td>
+<td>{{ t.points }}</td>
+</tr>
+{% endfor %}
+</table>

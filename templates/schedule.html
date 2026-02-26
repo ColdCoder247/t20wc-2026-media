@@ -1,0 +1,11 @@
+
+<link rel="stylesheet" href="base.css">
+<h1>ICC T20 World Cup 2026 - Schedule</h1>
+{% for m in matches %}
+<div class="card">
+  {{ m.date }} <br>
+  <span class="highlight">
+  {{ m.teams[0] }} vs {{ m.teams[1] }}
+  </span>
+</div>
+{% endfor %}
