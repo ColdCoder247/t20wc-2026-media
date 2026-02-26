@@ -21,8 +21,8 @@ jobs:
 
       - run: python auto_runner.py
         env:
+          CRICKET_API_KEY: ${{ secrets.CRICKET_API_KEY }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
-          CRICKET_API_KEY: ${{ secrets.CRICKET_API_KEY }}
